@@ -1,2 +1,16 @@
 <h2>สวัสดีจาก Angular Component แรกของผม!</h2>
 <button (click)="sayHi()">คลิกทักทาย</button>
+
+<ng-container>
+    @if (user()) {
+      <p>Hello {{ user().name }}</p>
+    }
+  </ng-container>
+  
+  <ul>
+    <ng-container>
+      @for (item of items(); track item.id) {
+        <li>{{ item.name }}</li>
+      }
+    </ng-container>
+  </ul>
