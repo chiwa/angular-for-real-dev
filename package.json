@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-real-dev": "node dist/angular-real-dev/server/server.mjs"
+    "serve:ssr:angular-real-dev": "node dist/angular-real-dev/server/server.mjs",
+    "start:spa": "lite-server --baseDir=dist/angular-real-dev/browser"
   },
   "prettier": {
     "overrides": [
@@ -46,6 +47,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lite-server": "^2.6.1",
     "typescript": "~5.8.2"
   }
 }
