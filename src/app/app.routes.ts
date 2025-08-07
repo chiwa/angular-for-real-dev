@@ -4,6 +4,8 @@ import { HelloComponent } from './hello/hello';
 import { AboutComponent } from './about/about';
 import { NotFoundComponent } from './not-found/not-found';
 import { AppCounterComponent } from './app-counter/app-counter';
+import { RegisterTemplateComponent } from './register-template/register-template';
+import { RegisterReactiveComponent } from './register-reactive/register-reactive';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'hello', pathMatch: 'full' },
@@ -11,6 +13,8 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'counter', component: AppCounterComponent }, 
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'register-template', component: RegisterTemplateComponent },
+  { path: 'register-reactive', component: RegisterReactiveComponent },
   { path: '**', redirectTo: 'not-found' }
 
 ];

@@ -1,0 +1,50 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <!-- Username -->
+    <div>
+      <input formControlName="username" placeholder="Username" />
+      <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.errors?.['required']">
+        Username is required
+      </div>
+      <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.errors?.['minlength']">
+        Username must be at least 3 characters
+      </div>
+    </div>
+  
+    <!-- Email -->
+    <div>
+      <input formControlName="email" placeholder="Email" />
+      <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">
+        Email is required
+      </div>
+      <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">
+        Invalid email format
+      </div>
+    </div>
+  
+    <!-- Password -->
+    <div>
+      <input formControlName="password" type="password" placeholder="Password" />
+      <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']">
+        Password is required
+      </div>
+      <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minlength']">
+        Password must be at least 6 characters
+      </div>
+    </div>
+  
+    <!-- Repeat Password -->
+    <div>
+      <input formControlName="repeatPassword" type="password" placeholder="Repeat Password" />
+      <div *ngIf="registerForm.get('repeatPassword')?.touched && registerForm.get('repeatPassword')?.errors?.['required']">
+        Repeat Password is required
+      </div>
+      <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('repeatPassword')?.touched">
+        Passwords do not match
+      </div>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  
+  </form>
